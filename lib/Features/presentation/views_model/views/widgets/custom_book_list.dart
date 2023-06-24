@@ -8,6 +8,7 @@ class CustomBooksList extends StatelessWidget {
     return SizedBox(
       height:220.h,
       child: ListView.builder(
+        //shrinkWrap: true,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsetsDirectional.only(end :16.0),
           child: Container(

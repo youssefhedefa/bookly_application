@@ -9,6 +9,7 @@ class CustomCategoriesList extends StatelessWidget {
     return SizedBox(
       height: 50.h,
       child: ListView.builder(
+        //shrinkWrap: true,
         itemBuilder: (context, index) => Padding(
           padding: EdgeInsetsDirectional.only(end: 18.0.w),
           child: Container(

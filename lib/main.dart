@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'Features/home_view.dart';
-import 'core/widgets/custom-app_bar.dart';
+import 'Features/presentation/views_model/views/home_view.dart';
 
 void main() {
   runApp(const MyApp());

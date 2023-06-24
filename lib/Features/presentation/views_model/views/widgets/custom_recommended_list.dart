@@ -9,6 +9,8 @@ class CustomRecommendedList extends StatelessWidget {
     return SizedBox (
       height: 80.h,
       child: ListView.builder(
+        //shrinkWrap: true,
+        //physics:const NeverScrollableScrollPhysics(),
         padding: EdgeInsetsDirectional.zero,
         itemBuilder: (context, index) => Container(
         height: 90.h,
