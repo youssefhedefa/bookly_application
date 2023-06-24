@@ -1,3 +1,4 @@
+import 'package:book/constance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,7 +10,7 @@ class CustomTextField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         filled: true,
-        fillColor:const Color.fromRGBO(51, 51, 51, 0.7),
+        fillColor:kShadowColor,
         prefixIcon: Icon(
           Icons.search_outlined,
           size: 28.sp,
