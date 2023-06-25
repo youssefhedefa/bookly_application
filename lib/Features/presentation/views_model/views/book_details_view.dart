@@ -1,5 +1,4 @@
 import 'package:book/Features/presentation/views_model/views/widgets/custom_app_bar.dart';
-import 'package:book/Features/presentation/views_model/views/widgets/custom_text.dart';
 import 'package:book/Features/presentation/views_model/views/widgets/itemDesign/custom_category_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
