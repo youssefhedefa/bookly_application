@@ -1,3 +1,5 @@
+import 'package:book/Features/presentation/views_model/views/book_details_view.dart';
+import 'package:book/Features/presentation/views_model/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Features/presentation/views_model/views/home_view.dart';
@@ -24,7 +26,14 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             brightness: Brightness.dark,
             useMaterial3: true,
+
           ),
+
+          routes: {
+            HomeView.id : (context) => const HomeView(),
+            HomeViewBody.id : (context) => const HomeViewBody(),
+            BookDetailsView.id : (context) => const BookDetailsView(),
+          },
           home: const HomeView(),
         );
       },

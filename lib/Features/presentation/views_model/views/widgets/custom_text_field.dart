@@ -16,7 +16,7 @@ class CustomTextField extends StatelessWidget {
           size: 28.sp,
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide.none,
         ),
         hintText: 'Search',
