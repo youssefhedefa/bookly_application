@@ -10,7 +10,6 @@ import 'listDesign/custom_recommended_list.dart';
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
   static String id = 'Home View Body';
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -32,12 +31,13 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
           SliverAppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             elevation: 0,
             pinned: true,
             bottom:  PreferredSize(
               preferredSize: Size.fromHeight(-30.h), child:const SizedBox(),),
-            flexibleSpace: const CustomTextField(),
+            flexibleSpace:const CustomTextField(),
           ),
           SliverToBoxAdapter(
             child: SizedBox(

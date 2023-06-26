@@ -1,17 +1,20 @@
-import 'package:book/Features/presentation/views_model/views/widgets/custom_app_bar.dart';
+import 'package:book/Features/presentation/views_model/views/side_bar_view.dart';
 import 'package:book/Features/presentation/views_model/views/widgets/itemDesign/custom_category_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../constance.dart';
+import 'widgets/custom_app_bar.dart';
 
 class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({Key? key}) : super(key: key);
+  const BookDetailsView({Key? key,}) : super(key: key);
   static String id = 'Book Details View';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer:const SideBarView(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

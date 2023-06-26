@@ -7,21 +7,23 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        filled: true,
-        fillColor:kShadowColor,
-        prefixIcon: Icon(
-          Icons.search_outlined,
-          size: 28.sp,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide.none,
-        ),
-        hintText: 'Search',
-        hintStyle: const TextStyle(
-          fontWeight: FontWeight.w400,
+    return SizedBox(
+      child: TextField(
+        decoration: InputDecoration(
+          filled: true,
+          fillColor:kShadowColor,
+          prefixIcon: Icon(
+            Icons.search_outlined,
+            size: 28.sp,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide.none,
+          ),
+          hintText: 'Search',
+          hintStyle: const TextStyle(
+            fontWeight: FontWeight.w400,
+          ),
         ),
       ),
     );
