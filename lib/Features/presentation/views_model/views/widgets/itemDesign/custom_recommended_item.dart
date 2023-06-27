@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../constance.dart';
 
 class CustomRecommendedItem extends StatelessWidget {
-  const CustomRecommendedItem({Key? key}) : super(key: key);
-
+  const CustomRecommendedItem({Key? key, required this.bookName, required this.authorName, required this.description}) : super(key: key);
+  final String bookName;
+  final String authorName;
+  final String description;
   @override
   Widget build(BuildContext context) {
     return  Padding(
@@ -30,16 +32,17 @@ class CustomRecommendedItem extends StatelessWidget {
             Padding(
               padding: EdgeInsetsDirectional.all(10.0.h),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Book name',
+                    bookName,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
-                    'author',
+                    authorName,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w400,
@@ -48,7 +51,7 @@ class CustomRecommendedItem extends StatelessWidget {
                   ),
                   const Spacer(),
                   Text(
-                    'Description',
+                    description,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w400,

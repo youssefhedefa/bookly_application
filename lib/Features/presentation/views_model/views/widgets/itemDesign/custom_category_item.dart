@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../constance.dart';
 
 class CustomCategoryItem extends StatelessWidget {
-  const CustomCategoryItem({Key? key}) : super(key: key);
-
+  const CustomCategoryItem({Key? key, required this.category}) : super(key: key);
+  final String category;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +16,7 @@ class CustomCategoryItem extends StatelessWidget {
       ),
       alignment: Alignment.center,
       child: Text(
-        'Design',
+        category,
         style: TextStyle(fontSize: 18.sp),
       ),
     );

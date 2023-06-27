@@ -12,7 +12,7 @@ class CustomCategoriesList extends StatelessWidget {
       child: ListView.builder(
         itemBuilder: (context, index) => Padding(
           padding: EdgeInsetsDirectional.only(end: 18.0.w),
-          child: const CustomCategoryItem(),
+          child:  CustomCategoryItem(category: 'Design $index'),
         ),
         itemCount: 10,
         scrollDirection: Axis.horizontal,

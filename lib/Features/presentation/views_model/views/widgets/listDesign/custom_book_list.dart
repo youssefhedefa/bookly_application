@@ -16,7 +16,10 @@ class CustomBooksList extends StatelessWidget {
           onTap: () {
             Navigator.pushNamed(context, BookDetailsView.id);
           },
-          child: const CustomBookItem(),
+          child: CustomBookItem(
+            bookName: 'Book Name $index',
+            bookAuthor: 'Book Author $index',
+          ),
         ),
         itemCount: 10,
         scrollDirection: Axis.horizontal,

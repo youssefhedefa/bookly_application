@@ -25,44 +25,50 @@ class _CustomButtonState extends State<CustomButton> {
   }
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          if (color == Colors.white54) {
-            color = const Color.fromRGBO(44, 44, 45, 1);
-          }
-          else {
-            color = Colors.white54;
-          }
-        });
-        Navigator.pushNamed(context, navigationPlace!);
-      },
-      child: Padding(
-        padding: EdgeInsetsDirectional.only(end: 5.0.w),
-        child: Container(
-          width: double.infinity,
-          height: 66.h,
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          padding: EdgeInsetsDirectional.only(top:8.h),
-          child: ListTile(
-            leading: Icon(
-              myIcon,
-              size: 50.sp,
-              color: Colors.white,
-            ),
-            title: Text(
-              myText??'',
-              style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w500,
+    return Builder(
+      builder: (context) {
+        return GestureDetector(
+          onTap: () {
+            setState(() {
+              if (color == Colors.white54) {
+                color = const Color.fromRGBO(44, 44, 45, 1);
+              }
+              else {
+                color = Colors.white54;
+              }
+            });
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, navigationPlace!);
+            //Scaffold.of(context).closeDrawer();
+          },
+          child: Padding(
+            padding: EdgeInsetsDirectional.only(end: 5.0.w),
+            child: Container(
+              width: double.infinity,
+              height: 66.h,
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              padding: EdgeInsetsDirectional.only(top:8.h),
+              child: ListTile(
+                leading: Icon(
+                  myIcon,
+                  size: 50.sp,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  myText??'',
+                  style: TextStyle(
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
             ),
           ),
-        ),
-      ),
+        );
+      }
     );
   }
 }

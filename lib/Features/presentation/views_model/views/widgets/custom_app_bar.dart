@@ -9,16 +9,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.backGroundColor,
   }) : super(key: key);
   final String title;
-  final Widget leadingIcon;
+  final Widget? leadingIcon;
   final Color? backGroundColor;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      automaticallyImplyLeading: false, // this will hide Drawer hamburger icon
-
+      automaticallyImplyLeading: false,
       elevation: 0.0,
       backgroundColor: const Color.fromRGBO(54, 54, 54, 1),
-
+      forceMaterialTransparency: true,
       title: Text(
         title,
         style: TextStyle(
@@ -32,15 +32,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         Builder(
           builder: (BuildContext context) {
             return IconButton(
-              onPressed: ()
-              {
+              onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
               icon: Icon(
                 Icons.menu_outlined,
                 size: 36.sp,
               ),
-            ) ;
+            );
           },
         ),
       ],

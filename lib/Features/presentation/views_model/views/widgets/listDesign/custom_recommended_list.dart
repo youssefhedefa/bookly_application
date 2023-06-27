@@ -15,7 +15,11 @@ class CustomRecommendedList extends StatelessWidget {
         onTap: () {
           Navigator.pushNamed(context, BookDetailsView.id);
         },
-        child: const CustomRecommendedItem(),
+        child: CustomRecommendedItem(
+          authorName: 'Author $index',
+          bookName: 'Book $index',
+          description: 'Description $index',
+        ),
       ),
       itemCount: 20,
       scrollDirection: Axis.vertical,

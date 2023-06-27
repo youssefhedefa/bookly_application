@@ -58,7 +58,7 @@ class BookDetailsView extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const CustomCategoryItem(),
+                const CustomCategoryItem(category: 'design'),
                 const Spacer(),
                 IconButton(
                   onPressed: () {},

@@ -3,15 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../constance.dart';
 
 class CustomBookItem extends StatelessWidget {
-  const CustomBookItem({Key? key}) : super(key: key);
-
+  const CustomBookItem({Key? key, required this.bookName, required this.bookAuthor}) : super(key: key);
+  final String bookName;
+  final String bookAuthor;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding:  EdgeInsetsDirectional.only(end :16.0.w),
       child: Container(
         width: 160.w,
-        height: 220.h,
+        height: 200.h,
         decoration: BoxDecoration(
           color:kShadowColor,
           borderRadius: BorderRadius.circular(18),
@@ -30,14 +31,14 @@ class CustomBookItem extends StatelessWidget {
             ),
             SizedBox(height: 8.h,),
             Text(
-              'Book name',
+              bookName,
               style: TextStyle(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
               ),
             ),
             Text(
-              'author',
+              bookAuthor,
               style: TextStyle(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w400,
