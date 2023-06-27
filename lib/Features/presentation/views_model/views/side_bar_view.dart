@@ -1,7 +1,11 @@
+import 'package:book/Features/presentation/views_model/views/favorites_view.dart';
+import 'package:book/Features/presentation/views_model/views/home_view.dart';
 import 'package:book/Features/presentation/views_model/views/widgets/custom_button.dart';
 import 'package:book/Features/presentation/views_model/views/widgets/custom_profile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'settings_view.dart';
 
 class SideBarView extends StatelessWidget {
   const SideBarView({Key? key}) : super(key: key);
@@ -15,7 +19,7 @@ class SideBarView extends StatelessWidget {
         child: Container(
           height: double.infinity,
           width: 288.w,
-          color: Colors.blueAccent,
+          color: const Color.fromRGBO(44, 44, 45, 1),
           child: SafeArea(
             child: Column(
               children: [
@@ -26,15 +30,27 @@ class SideBarView extends StatelessWidget {
                 SizedBox(
                   height: 42.h,
                 ),
-                const CustomButton(icon: Icons.home_outlined,text: 'Home',),
+                CustomButton(
+                  icon: Icons.home_outlined,
+                  text: 'Home',
+                  navigationPlace: HomeView.id,
+                ),
                 SizedBox(
                   height: 32.h,
                 ),
-                const CustomButton(icon: Icons.favorite_outline,text: 'Favorite',),
+                CustomButton(
+                  icon: Icons.favorite_outline,
+                  text: 'Favorite',
+                  navigationPlace: FavoritesView.id,
+                ),
                 SizedBox(
                   height: 32.h,
                 ),
-                const CustomButton(icon: Icons.settings_outlined,text: 'Settings',),
+                 CustomButton(
+                  icon: Icons.settings_outlined,
+                  text: 'Settings',
+                  navigationPlace: SettingsView.id,
+                ),
               ],
             ),
           ),
@@ -43,4 +59,3 @@ class SideBarView extends StatelessWidget {
     );
   }
 }
-

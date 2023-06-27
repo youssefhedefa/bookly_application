@@ -1,6 +1,9 @@
 import 'package:book/Features/presentation/views_model/views/book_details_view.dart';
+import 'package:book/Features/presentation/views_model/views/favorites_view.dart';
+import 'package:book/Features/presentation/views_model/views/settings_view.dart';
 import 'package:book/Features/presentation/views_model/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Features/presentation/views_model/views/home_view.dart';
 import 'Features/presentation/views_model/views/side_bar_view.dart';
@@ -24,15 +27,18 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
-            scaffoldBackgroundColor:const Color.fromRGBO(28, 27, 31, 1),
+            scaffoldBackgroundColor:const Color.fromRGBO(54, 54, 54, 1),
             brightness: Brightness.dark,
             useMaterial3: true,
           ),
+
           routes: {
             HomeView.id: (context) =>const HomeView(),
             HomeViewBody.id: (context) => const HomeViewBody(),
             BookDetailsView.id: (context) => const BookDetailsView(),
             SideBarView.id: (context) => const SideBarView(),
+            FavoritesView.id: (context) => const FavoritesView(),
+            SettingsView.id:(context)=> const SettingsView(),
           },
           home:const HomeView(),
         );

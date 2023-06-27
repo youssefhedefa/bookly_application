@@ -2,23 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatefulWidget {
-  const CustomButton({Key? key, required this.icon, required this.text,}) : super(key: key);
+  const CustomButton({Key? key, required this.icon, required this.text, required this.navigationPlace,}) : super(key: key);
   final IconData icon;
   final String text;
+  final String navigationPlace;
   @override
   State<CustomButton> createState() => _CustomButtonState();
 }
 
 class _CustomButtonState extends State<CustomButton> {
-  Color color = Colors.white54;
+  Color color = const Color.fromRGBO(44, 44, 45, 1);
   IconData? myIcon;
   String? myText;
+  String? navigationPlace;
 
   @override
   void initState() {
     super.initState();
     myIcon = widget.icon;
     myText = widget.text;
+    navigationPlace = widget.navigationPlace;
   }
   @override
   Widget build(BuildContext context) {
@@ -26,11 +29,13 @@ class _CustomButtonState extends State<CustomButton> {
       onTap: () {
         setState(() {
           if (color == Colors.white54) {
-            color = Colors.black26;
-          } else {
+            color = const Color.fromRGBO(44, 44, 45, 1);
+          }
+          else {
             color = Colors.white54;
           }
         });
+        Navigator.pushNamed(context, navigationPlace!);
       },
       child: Padding(
         padding: EdgeInsetsDirectional.only(end: 5.0.w),

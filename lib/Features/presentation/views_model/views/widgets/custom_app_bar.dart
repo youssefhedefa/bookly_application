@@ -17,7 +17,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false, // this will hide Drawer hamburger icon
 
       elevation: 0.0,
-      backgroundColor: backGroundColor,
+      backgroundColor: const Color.fromRGBO(54, 54, 54, 1),
+
       title: Text(
         title,
         style: TextStyle(

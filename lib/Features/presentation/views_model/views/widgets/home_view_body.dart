@@ -32,7 +32,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           SliverAppBar(
             automaticallyImplyLeading: false,
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: const Color.fromRGBO(54, 54, 54, 1),
             elevation: 0,
             pinned: true,
             bottom:  PreferredSize(
