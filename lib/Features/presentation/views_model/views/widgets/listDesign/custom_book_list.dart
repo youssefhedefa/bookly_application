@@ -10,7 +10,7 @@ class CustomBooksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 220.h,
+      height: 240.h,
       child: ListView.builder(
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
