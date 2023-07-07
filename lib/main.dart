@@ -3,8 +3,8 @@ import 'package:book/Features/presentation/views_model/views/favorites_view.dart
 import 'package:book/Features/presentation/views_model/views/settings_view.dart';
 import 'package:book/Features/presentation/views_model/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'Features/presentation/views_model/views/home_view.dart';
 import 'Features/presentation/views_model/views/side_bar_view.dart';
 
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor:const Color.fromRGBO(54, 54, 54, 1),
             brightness: Brightness.dark,
             useMaterial3: true,
+            textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
           ),
 
           routes: {

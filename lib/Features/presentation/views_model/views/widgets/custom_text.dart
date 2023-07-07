@@ -11,8 +11,8 @@ class CustomText extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w500,
+          fontSize: 18.sp,
+          fontWeight: FontWeight.w600,
         ),
       ),
     );
