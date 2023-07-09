@@ -24,6 +24,6 @@ class DetailViewAppBar extends StatelessWidget {
         ),
       ),
     );
-    
+
   }
 }
