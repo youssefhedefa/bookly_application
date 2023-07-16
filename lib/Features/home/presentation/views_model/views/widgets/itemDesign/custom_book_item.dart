@@ -1,7 +1,7 @@
 import 'package:book/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../../constance.dart';
+import '../../../../../../../constance.dart';
 
 class CustomBookItem extends StatelessWidget {
   const CustomBookItem({Key? key, required this.bookName, required this.bookAuthor}) : super(key: key);

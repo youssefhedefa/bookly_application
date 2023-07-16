@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../../../core/utils/assets.dart';
+
+import '../../../../../../../core/utils/assets.dart';
 
 
 class DetailViewBookCoverContainer extends StatelessWidget {

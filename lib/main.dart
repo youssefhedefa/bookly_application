@@ -1,12 +1,13 @@
-import 'package:book/Features/presentation/views_model/views/book_details_view.dart';
-import 'package:book/Features/presentation/views_model/views/favorites_view.dart';
-import 'package:book/Features/presentation/views_model/views/settings_view.dart';
-import 'package:book/Features/presentation/views_model/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'Features/presentation/views_model/views/home_view.dart';
-import 'Features/presentation/views_model/views/side_bar_view.dart';
+
+import 'Features/home/presentation/views_model/views/book_details_view.dart';
+import 'Features/home/presentation/views_model/views/favorites_view.dart';
+import 'Features/home/presentation/views_model/views/home_view.dart';
+import 'Features/home/presentation/views_model/views/settings_view.dart';
+import 'Features/home/presentation/views_model/views/side_bar_view.dart';
+import 'Features/home/presentation/views_model/views/widgets/home_view_body.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
             SettingsView.id:(context)=> const SettingsView(),
           },
           home:const HomeView(),
+         // home: const AppTry(),
         );
       },
     );

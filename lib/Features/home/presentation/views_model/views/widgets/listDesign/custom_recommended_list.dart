@@ -1,5 +1,5 @@
-import 'package:book/Features/presentation/views_model/views/book_details_view.dart';
 import 'package:flutter/material.dart';
+import '../../book_details_view.dart';
 import '../itemDesign/custom_recommended_item.dart';
 
 class CustomRecommendedList extends StatelessWidget {

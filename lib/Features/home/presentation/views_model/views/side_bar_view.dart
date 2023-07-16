@@ -1,10 +1,10 @@
-import 'package:book/Features/presentation/views_model/views/favorites_view.dart';
-import 'package:book/Features/presentation/views_model/views/home_view.dart';
-import 'package:book/Features/presentation/views_model/views/widgets/custom_button.dart';
-import 'package:book/Features/presentation/views_model/views/widgets/custom_profile_card.dart';
+import 'package:book/Features/home/presentation/views_model/views/widgets/custom_button.dart';
+import 'package:book/Features/home/presentation/views_model/views/widgets/custom_profile_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'favorites_view.dart';
+import 'home_view.dart';
 import 'settings_view.dart';
 
 class SideBarView extends StatelessWidget {

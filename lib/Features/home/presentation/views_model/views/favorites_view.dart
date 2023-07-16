@@ -1,6 +1,6 @@
-import 'package:book/Features/presentation/views_model/views/side_bar_view.dart';
-import 'package:book/Features/presentation/views_model/views/widgets/custom_app_bar.dart';
-import 'package:book/Features/presentation/views_model/views/widgets/itemDesign/custom_recommended_item.dart';
+import 'package:book/Features/home/presentation/views_model/views/side_bar_view.dart';
+import 'package:book/Features/home/presentation/views_model/views/widgets/custom_app_bar.dart';
+import 'package:book/Features/home/presentation/views_model/views/widgets/itemDesign/custom_recommended_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

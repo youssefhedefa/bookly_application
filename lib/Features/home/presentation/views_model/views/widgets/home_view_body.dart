@@ -36,7 +36,7 @@ class HomeViewBody extends StatelessWidget {
             elevation: 0,
             pinned: true,
             bottom:  PreferredSize(
-              preferredSize: Size.fromHeight(-30.h), child:const SizedBox(),),
+              preferredSize: Size.fromHeight(-30.h), child:const SizedBox(height: 18,),),
             flexibleSpace:const CustomTextField(),
           ),
           SliverToBoxAdapter(
@@ -68,13 +68,13 @@ class HomeViewBody extends StatelessWidget {
               height: MediaQuery.of(context).size.height / 28,
             ),
           ),
-          const SliverToBoxAdapter(child:  CustomText(text: 'recommended')),
+          const SliverToBoxAdapter(child: CustomText(text: 'recommended')),
           SliverToBoxAdapter(
             child: SizedBox(
               height: MediaQuery.of(context).size.height / 80,
             ),
           ),
-          const SliverToBoxAdapter(child:  CustomRecommendedList()),
+          const SliverToBoxAdapter(child: CustomRecommendedList()),
         ],
       ),
     );

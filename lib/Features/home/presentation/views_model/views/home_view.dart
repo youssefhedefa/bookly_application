@@ -1,5 +1,5 @@
-import 'package:book/Features/presentation/views_model/views/side_bar_view.dart';
-import 'package:book/Features/presentation/views_model/views/widgets/home_view_body.dart';
+import 'package:book/Features/home/presentation/views_model/views/side_bar_view.dart';
+import 'package:book/Features/home/presentation/views_model/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {

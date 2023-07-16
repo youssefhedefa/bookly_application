@@ -1,7 +1,7 @@
-import 'package:book/Features/presentation/views_model/views/book_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../book_details_view.dart';
 import '../itemDesign/custom_book_item.dart';
 
 class CustomBooksList extends StatelessWidget {
