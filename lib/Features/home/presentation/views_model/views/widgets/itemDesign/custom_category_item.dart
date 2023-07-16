@@ -8,7 +8,7 @@ class CustomCategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100.w,
+      width: 140.w,
       height: 46.h,
       decoration: BoxDecoration(
         color: kShadowColor,
@@ -17,6 +17,7 @@ class CustomCategoryItem extends StatelessWidget {
       alignment: Alignment.center,
       child: Text(
         category,
+        textAlign: TextAlign.center,
         style: TextStyle(fontSize: 18.sp),
       ),
     );
