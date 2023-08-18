@@ -1,6 +1,8 @@
+import '../models/book_model.dart';
+
 abstract class HomeRepo
 {
-  fetchNewBooks();
-  fetchRecommendedBooks();
-  fetchSearchedBooks();
+   Future<List<BookModel>> fetchNewBooks();
+   Future<List<BookModel>> fetchRecommendedBooks();
+   Future<List<BookModel>> fetchSearchedBooks();
 }

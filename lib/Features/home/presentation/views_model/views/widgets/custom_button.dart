@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatefulWidget {
-  const CustomButton({Key? key, required this.icon, required this.text, required this.navigationPlace,}) : super(key: key);
+  const CustomButton({Key? key, required this.icon, required this.text, required this.navigationPlace, }) : super(key: key);
   final IconData icon;
   final String text;
   final String navigationPlace;
+  //final Object? arg;
   @override
   State<CustomButton> createState() => _CustomButtonState();
 }
@@ -38,8 +39,11 @@ class _CustomButtonState extends State<CustomButton> {
               }
             });
             Navigator.of(context).pop();
-            Navigator.pushNamed(context, navigationPlace!);
-            //Scaffold.of(context).closeDrawer();
+            Navigator.pushNamed(
+                context,
+                navigationPlace!,
+              //arguments: widget.arg!,
+            );
           },
           child: Padding(
             padding: EdgeInsetsDirectional.only(end: 5.0.w),

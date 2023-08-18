@@ -4,7 +4,7 @@ import 'SaleInfo.dart';
 import 'SearchInfo.dart';
 import 'access_info.dart';
 
-class BookDetails {
+class BookModel {
   String? kind;
   String? id;
   String? etag;
@@ -14,7 +14,7 @@ class BookDetails {
   AccessInfo? accessInfo;
   SearchInfo? searchInfo;
 
-  BookDetails(
+  BookModel(
       {this.kind,
         this.id,
         this.etag,
@@ -24,7 +24,7 @@ class BookDetails {
         this.accessInfo,
         this.searchInfo});
 
-  BookDetails.fromJson(Map<String, dynamic> json) {
+  BookModel.fromJson(Map<String, dynamic> json) {
     kind = json['kind'];
     id = json['id'];
     etag = json['etag'];

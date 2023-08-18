@@ -55,11 +55,11 @@ class VolumeInfo {
     if (json['industryIdentifiers'] != null) {
       industryIdentifiers = <IndustryIdentifiers>[];
       json['industryIdentifiers'].forEach((v) {
-        industryIdentifiers!.add(new IndustryIdentifiers.fromJson(v));
+        industryIdentifiers!.add(IndustryIdentifiers.fromJson(v));
       });
     }
     readingModes = json['readingModes'] != null
-        ? new ReadingModes.fromJson(json['readingModes'])
+        ? ReadingModes.fromJson(json['readingModes'])
         : null;
     pageCount = json['pageCount'];
     printType = json['printType'];
@@ -68,10 +68,10 @@ class VolumeInfo {
     allowAnonLogging = json['allowAnonLogging'];
     contentVersion = json['contentVersion'];
     panelizationSummary = json['panelizationSummary'] != null
-        ? new PanelizationSummary.fromJson(json['panelizationSummary'])
+        ? PanelizationSummary.fromJson(json['panelizationSummary'])
         : null;
     imageLinks = json['imageLinks'] != null
-        ? new ImageLinks.fromJson(json['imageLinks'])
+        ? ImageLinks.fromJson(json['imageLinks'])
         : null;
     language = json['language'];
     previewLink = json['previewLink'];
@@ -80,7 +80,7 @@ class VolumeInfo {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['title'] = this.title;
     data['authors'] = this.authors;
     data['publisher'] = this.publisher;

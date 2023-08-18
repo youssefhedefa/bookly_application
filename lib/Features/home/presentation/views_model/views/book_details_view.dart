@@ -7,30 +7,32 @@ import 'widgets/detailsViewSections/detail_book_button.dart';
 
 class BookDetailsView extends StatelessWidget {
   const BookDetailsView({
-    Key? key,
+    Key? key, required this.book,
   }) : super(key: key);
-  static String id = 'Book Details View';
+  //static String id = 'Book Details View';
+  final Map<String,dynamic> book;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: const SideBarView(),
+      drawer: const SideBarView(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Expanded(
-            child:  Stack(
-              children: [
-                DetailViewBookCoverContainer(),
-                DetailViewAppBar(),
-              ],
-            ),
+           Stack(
+            children: [
+              DetailViewBookCoverContainer(
+                bookImage: book['volumeInfo']['imageLinks']?['smallThumbnail'] ?? '',
+              ),
+              const DetailViewAppBar(),
+            ],
           ),
-          const Expanded(child:  CustomDetailBookButton()),
+          CustomDetailBookButton(id: book['id']),
           SizedBox(
             height: MediaQuery.of(context).size.height / 28,
           ),
-          const Expanded(child:  DescriptionPart()),
+          DescriptionPart(des: book['volumeInfo']['description'] ?? book['volumeInfo']['infoLink'],
+          ),
         ],
       ),
     );

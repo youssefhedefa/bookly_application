@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../constance.dart';
 
 class DescriptionPart extends StatelessWidget {
-  const DescriptionPart({Key? key}) : super(key: key);
+  const DescriptionPart({Key? key, required this.des}) : super(key: key);
+
+  final String des;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class DescriptionPart extends StatelessWidget {
                 ),
               ),
               Text(
-                tryText,
+                des,
                 style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w400,

@@ -1,15 +1,19 @@
+import 'package:book/Features/favourite/presentation/manager/favourite_cubit.dart';
+import 'package:book/Features/home/presentation/manager/homeCubit/home_cubit.dart';
+import 'package:book/core/utils/api_service.dart';
+import 'package:book/core/utils/cach_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'bloc_observer.dart';
+import 'core/utils/my_routes.dart';
 
-import 'Features/home/presentation/views_model/views/book_details_view.dart';
-import 'Features/home/presentation/views_model/views/favorites_view.dart';
-import 'Features/home/presentation/views_model/views/home_view.dart';
-import 'Features/home/presentation/views_model/views/settings_view.dart';
-import 'Features/home/presentation/views_model/views/side_bar_view.dart';
-import 'Features/home/presentation/views_model/views/widgets/home_view_body.dart';
-
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  ApiService.init();
+  await CacheHelper.init();
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
@@ -19,33 +23,37 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (BuildContext context, Widget? child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            scaffoldBackgroundColor:const Color.fromRGBO(54, 54, 54, 1),
-            brightness: Brightness.dark,
-            useMaterial3: true,
-            textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
-          ),
-
-          routes: {
-            HomeView.id: (context) =>const HomeView(),
-            HomeViewBody.id: (context) => const HomeViewBody(),
-            BookDetailsView.id: (context) => const BookDetailsView(),
-            SideBarView.id: (context) => const SideBarView(),
-            FavoritesView.id: (context) => const FavoritesView(),
-            SettingsView.id:(context)=> const SettingsView(),
-          },
-          home:const HomeView(),
-         // home: const AppTry(),
-        );
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => HomeCubit()
+            ..fetchNewestBooks()
+            ..fetchRecommendedBooks(),
+        ),
+        BlocProvider(
+          create: (context) => FavouriteCubit(),
+        ),
+      ],
+      child: ScreenUtilInit(
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (BuildContext context, Widget? child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              scaffoldBackgroundColor: const Color.fromRGBO(54, 54, 54, 1),
+              brightness: Brightness.dark,
+              useMaterial3: true,
+              textTheme:
+                  GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+            ),
+            onGenerateRoute: MyRoutes.generateRoute,
+            initialRoute: '/',
+          );
+        },
+      ),
     );
   }
 }

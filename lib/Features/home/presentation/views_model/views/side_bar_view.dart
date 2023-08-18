@@ -1,9 +1,10 @@
 import 'package:book/Features/home/presentation/views_model/views/widgets/custom_button.dart';
 import 'package:book/Features/home/presentation/views_model/views/widgets/custom_profile_card.dart';
+import 'package:book/core/utils/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'favorites_view.dart';
+import '../../../../favourite/presentation/views/favorites_view.dart';
 import 'home_view.dart';
 import 'settings_view.dart';
 
@@ -30,26 +31,26 @@ class SideBarView extends StatelessWidget {
                 SizedBox(
                   height: 42.h,
                 ),
-                CustomButton(
+                const CustomButton(
                   icon: Icons.home_outlined,
                   text: 'Home',
-                  navigationPlace: HomeView.id,
+                  navigationPlace: MyRoutes.kHome,
                 ),
                 SizedBox(
                   height: 32.h,
                 ),
-                CustomButton(
+                const CustomButton(
                   icon: Icons.favorite_outline,
                   text: 'Favorite',
-                  navigationPlace: FavoritesView.id,
+                  navigationPlace: MyRoutes.kFavorites,
                 ),
                 SizedBox(
                   height: 32.h,
                 ),
-                 CustomButton(
+                 const CustomButton(
                   icon: Icons.settings_outlined,
                   text: 'Settings',
-                  navigationPlace: SettingsView.id,
+                  navigationPlace: MyRoutes.kSettings,
                 ),
               ],
             ),

@@ -1,3 +1,4 @@
+import 'package:book/core/utils/widgets/cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../constance.dart';
@@ -8,17 +9,18 @@ class CustomRecommendedItem extends StatelessWidget {
       {Key? key,
       required this.bookName,
       required this.authorName,
-      required this.description})
+      required this.description, required this.bookImage})
       : super(key: key);
   final String bookName;
   final String authorName;
   final String description;
+  final String bookImage;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsetsDirectional.only(bottom: 10.0),
       child: Container(
-        height: 166.h,
+        height: 170.h,
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -32,18 +34,9 @@ class CustomRecommendedItem extends StatelessWidget {
             children: [
               AspectRatio(
                 aspectRatio: 0.75 / 1,
-                child: Container(
-                  // width: 80.w,
-                  // height: 80.h,
-                  decoration: BoxDecoration(
-                    // color: Colors.teal,
-                    borderRadius: BorderRadius.circular(20),
-                    image: const DecorationImage(
-                      image: AssetImage(AssetsData.testCoverImage),
-                      fit: BoxFit.fill,
-                      alignment: Alignment.center,
-                    ),
-                  ),
+                child: ClipRRect(
+                  borderRadius: BorderRadiusDirectional.circular(20),
+                  child: CachedImage(bookImage: bookImage),
                 ),
               ),
               Padding(

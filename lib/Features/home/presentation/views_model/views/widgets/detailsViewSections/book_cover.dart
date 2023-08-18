@@ -1,10 +1,13 @@
+import 'package:book/core/utils/widgets/cached_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../../core/utils/assets.dart';
 
-
 class DetailViewBookCoverContainer extends StatelessWidget {
-  const DetailViewBookCoverContainer({Key? key}) : super(key: key);
+  const DetailViewBookCoverContainer({Key? key, required this.bookImage})
+      : super(key: key);
+
+  final String bookImage;
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +29,13 @@ class DetailViewBookCoverContainer extends StatelessWidget {
           padding: const EdgeInsets.only(top: 38.0),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * 0.48,
-            child: const AspectRatio(
+            child: AspectRatio(
               aspectRatio: 1 / 1.25,
-              child:  Image(
-                image: AssetImage(
-                  AssetsData.testCoverImage,
-                ),
-                //fit: BoxFit.fill,
-              ),
+              child: CachedImage(bookImage: bookImage),
+              //fit: BoxFit.fill,
             ),
           ),
-        )
+        ),
       ],
     );
   }
