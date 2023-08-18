@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../../../constance.dart';
+import '../../../../../../../core/utils/constance.dart';
 
 class CustomCategoryItem extends StatelessWidget {
   const CustomCategoryItem({Key? key, required this.category}) : super(key: key);

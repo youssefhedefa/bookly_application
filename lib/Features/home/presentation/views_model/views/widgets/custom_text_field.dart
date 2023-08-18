@@ -1,4 +1,4 @@
-import 'package:book/constance.dart';
+import 'package:book/core/utils/constance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

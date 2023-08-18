@@ -2,7 +2,7 @@ import 'package:book/core/utils/widgets/cached_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../../../constance.dart';
+import '../../../../../../../core/utils/constance.dart';
 
 class CustomBookItem extends StatelessWidget {
   const CustomBookItem({Key? key, required this.bookName, required this.bookAuthor, required this.bookImage}) : super(key: key);

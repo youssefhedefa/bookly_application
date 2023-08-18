@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../../constance.dart';
+import '../../../../../../../core/utils/constance.dart';
 
 class DescriptionPart extends StatelessWidget {
   const DescriptionPart({Key? key, required this.des}) : super(key: key);
