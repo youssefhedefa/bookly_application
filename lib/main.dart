@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         builder: (BuildContext context, Widget? child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Flutter Demo',
+            title: 'Bookly',
             theme: ThemeData(
               scaffoldBackgroundColor: const Color.fromRGBO(54, 54, 54, 1),
               brightness: Brightness.dark,

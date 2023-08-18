@@ -1,3 +1,4 @@
+import 'package:book/core/utils/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_app_bar.dart';
@@ -37,7 +38,14 @@ class HomeViewBody extends StatelessWidget {
             pinned: true,
             bottom:  PreferredSize(
               preferredSize: Size.fromHeight(-30.h), child:const SizedBox(height: 18,),),
-            flexibleSpace:const CustomTextField(),
+            flexibleSpace:GestureDetector(
+              onTap: ()
+              {
+                Navigator.pushNamed(context, MyRoutes.kSearch);
+              },
+                child: const CustomTextField(),
+
+            ),
           ),
           SliverToBoxAdapter(
             child: SizedBox(

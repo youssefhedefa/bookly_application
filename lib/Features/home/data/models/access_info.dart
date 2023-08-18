@@ -8,7 +8,7 @@ class AccessInfo {
   bool? embeddable;
   bool? publicDomain;
   String? textToSpeechPermission;
-  Epub? epub;
+  EPub? epub;
   Pdf? pdf;
   String? webReaderLink;
   String? accessViewStatus;
@@ -32,7 +32,7 @@ class AccessInfo {
     embeddable = json['embeddable'];
     publicDomain = json['publicDomain'];
     textToSpeechPermission = json['textToSpeechPermission'];
-    epub = json['epub'] != null ? Epub.fromJson(json['epub']) : null;
+    epub = json['epub'] != null ? EPub.fromJson(json['epub']) : null;
     pdf = json['pdf'] != null ? Pdf.fromJson(json['pdf']) : null;
     webReaderLink = json['webReaderLink'];
     accessViewStatus = json['accessViewStatus'];

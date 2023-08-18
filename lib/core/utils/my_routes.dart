@@ -3,6 +3,7 @@ import 'package:book/Features/favourite/presentation/views/favorites_view.dart';
 import 'package:book/Features/home/presentation/views_model/views/home_view.dart';
 import 'package:book/Features/home/presentation/views_model/views/settings_view.dart';
 import 'package:book/Features/home/presentation/views_model/views/side_bar_view.dart';
+import 'package:book/Features/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 
 class MyRoutes {
@@ -12,7 +13,7 @@ class MyRoutes {
   static const String kSideBar = '/side bar';
   static const String kFavorites = '/favorites';
   static const String kSettings = '/setting';
-
+  static const String kSearch = '/search';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -32,7 +33,6 @@ class MyRoutes {
         );
 
       case kFavorites:
-       // var arg = settings.arguments as Map<String,dynamic>;
         return MaterialPageRoute(
           builder: (context) => const FavoritesView(),
         );
@@ -40,6 +40,11 @@ class MyRoutes {
       case kSettings:
         return MaterialPageRoute(
           builder: (context) => const SettingsView(),
+        );
+
+      case kSearch:
+        return MaterialPageRoute(
+          builder: (context) => const SearchView(),
         );
 
     }

@@ -3,7 +3,6 @@ import 'package:book/Features/home/presentation/manager/homeCubit/home_state.dar
 import 'package:book/core/utils/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../book_details_view.dart';
 import '../itemDesign/custom_recommended_item.dart';
 
 class CustomRecommendedList extends StatelessWidget {

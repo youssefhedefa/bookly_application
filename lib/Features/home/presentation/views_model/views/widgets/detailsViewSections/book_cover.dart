@@ -1,7 +1,6 @@
 import 'package:book/core/utils/widgets/cached_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../../core/utils/assets.dart';
 
 class DetailViewBookCoverContainer extends StatelessWidget {
   const DetailViewBookCoverContainer({Key? key, required this.bookImage})

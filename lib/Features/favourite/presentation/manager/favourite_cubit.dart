@@ -38,7 +38,7 @@ class FavouriteCubit extends Cubit<FavouritesStates> {
         },
       ).catchError(
         (errMessage) {
-          print(errMessage.toString());
+          //print(errMessage.toString());
           emit(
             FavouritesFailureState(
               errMessage.toString(),

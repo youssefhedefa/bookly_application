@@ -4,9 +4,6 @@ import 'package:book/core/utils/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../favourite/presentation/views/favorites_view.dart';
-import 'home_view.dart';
-import 'settings_view.dart';
 
 class SideBarView extends StatelessWidget {
   const SideBarView({Key? key}) : super(key: key);

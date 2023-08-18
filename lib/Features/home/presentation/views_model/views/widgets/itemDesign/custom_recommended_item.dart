@@ -2,7 +2,6 @@ import 'package:book/core/utils/widgets/cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../constance.dart';
-import '../../../../../../../core/utils/assets.dart';
 
 class CustomRecommendedItem extends StatelessWidget {
   const CustomRecommendedItem(
