@@ -14,6 +14,7 @@ class CustomRecommendedList extends StatelessWidget {
       builder: (BuildContext context, state) {
         var homeCubit = BlocProvider.of<HomeCubit>(context);
         return ListView.builder(
+          reverse: true,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           padding: EdgeInsetsDirectional.zero,
@@ -21,11 +22,20 @@ class CustomRecommendedList extends StatelessWidget {
             onTap: () {
               Navigator.pushNamed(context, MyRoutes.kBookDetails);
             },
-            child: CustomRecommendedItem(
-              authorName: homeCubit.recommendedBooks[index]['volumeInfo']['authors']?[0] ?? '',
-              bookName: homeCubit.recommendedBooks[index]['volumeInfo']['title'],
-              description: homeCubit.recommendedBooks[index]['volumeInfo']['description'] ?? homeCubit.recommendedBooks[index]['volumeInfo']['infoLink'],
-              bookImage: homeCubit.recommendedBooks[index]['volumeInfo']['imageLinks']?['smallThumbnail'] ?? '',
+            child: GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(
+                  context,
+                  MyRoutes.kBookDetails,
+                  arguments: homeCubit.newestBooks[index],
+                );
+              },
+              child: CustomRecommendedItem(
+                authorName: homeCubit.recommendedBooks[index]['volumeInfo']['authors']?[0] ?? '',
+                bookName: homeCubit.recommendedBooks[index]['volumeInfo']['title'],
+                description: homeCubit.recommendedBooks[index]['volumeInfo']['description'] ?? homeCubit.recommendedBooks[index]['volumeInfo']['infoLink'],
+                bookImage: homeCubit.recommendedBooks[index]['volumeInfo']['imageLinks']?['smallThumbnail'] ?? '',
+              ),
             ),
           ),
           itemCount: homeCubit.recommendedBooks.length,

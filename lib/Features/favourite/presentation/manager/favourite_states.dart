@@ -8,3 +8,4 @@ class FavouritesFailureState extends FavouritesStates{
 
   FavouritesFailureState(this.errMessage);
 }
+class FavouritesDeleteSuccessState extends FavouritesStates{}

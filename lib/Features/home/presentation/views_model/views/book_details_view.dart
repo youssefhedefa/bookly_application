@@ -9,7 +9,7 @@ class BookDetailsView extends StatelessWidget {
   const BookDetailsView({
     Key? key, required this.book,
   }) : super(key: key);
-  //static String id = 'Book Details View';
+
   final Map<String,dynamic> book;
 
   @override
@@ -27,7 +27,10 @@ class BookDetailsView extends StatelessWidget {
               const DetailViewAppBar(),
             ],
           ),
-          CustomDetailBookButton(id: book['id']),
+          CustomDetailBookButton(
+              id: book['id'],
+            category: book['volumeInfo']['categories'][0],
+          ),
           SizedBox(
             height: MediaQuery.of(context).size.height / 28,
           ),

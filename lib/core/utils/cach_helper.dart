@@ -18,5 +18,8 @@ class CacheHelper
   {
     return sharedPreferences!.getStringList(favouriteID);
   }
+  static void deleteFavourites(favouritesID){
+    sharedPreferences!.remove(favouriteID);
+  }
 
 }

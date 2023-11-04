@@ -8,7 +8,7 @@ class CustomCategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 140.w,
+      width: 160.w,
       height: 46.h,
       decoration: BoxDecoration(
         color: kShadowColor,

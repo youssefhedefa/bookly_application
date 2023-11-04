@@ -66,13 +66,13 @@ class CustomRecommendedItem extends StatelessWidget {
                           color: kAuthorNameColor,
                         ),
                       ),
-                      SizedBox(height: 3.h,),
+                      Expanded(child: SizedBox(height: 1.h,)),
                       Text(
                         description,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontSize: 16.sp,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
                           color: kAuthorNameColor,
                         ),

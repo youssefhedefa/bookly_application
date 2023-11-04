@@ -1,3 +1,4 @@
+
 import 'package:bloc/bloc.dart';
 import 'package:book/Features/favourite/presentation/manager/favourite_states.dart';
 import 'package:book/core/utils/api_service.dart';
@@ -6,7 +7,7 @@ import 'package:book/core/utils/cach_helper.dart';
 class FavouriteCubit extends Cubit<FavouritesStates> {
   FavouriteCubit() : super(FavouritesInitialState());
 
-  List<String> favouritesID = CacheHelper.getFavourites()!;
+  List<String> favouritesID = CacheHelper.getFavourites()??[];
 
   void addToFavourites(String id) {
     if (!favouritesID.contains(id)) {
@@ -16,6 +17,11 @@ class FavouriteCubit extends Cubit<FavouritesStates> {
 
   List<String> getFavourites() {
     return favouritesID;
+  }
+
+  void deleteFavourites(){
+    CacheHelper.deleteFavourites(favouritesID);
+    emit(FavouritesDeleteSuccessState());
   }
 
   List<dynamic> favouriteBooks = [];

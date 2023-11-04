@@ -8,9 +8,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../itemDesign/custom_category_item.dart';
 
 class CustomDetailBookButton extends StatelessWidget {
-  const CustomDetailBookButton({Key? key, required this.id}) : super(key: key);
+  const CustomDetailBookButton({Key? key, required this.id, required this.category}) : super(key: key);
 
   final String id;
+  final String category;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class CustomDetailBookButton extends StatelessWidget {
           ),
           child: Row(
             children: [
-              const CustomCategoryItem(category: 'design'),
+              CustomCategoryItem(category: category),
               const Spacer(),
               IconButton(
                 onPressed: () {},
