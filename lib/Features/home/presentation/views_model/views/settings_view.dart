@@ -2,7 +2,7 @@ import 'package:book/Features/favourite/presentation/manager/favourite_cubit.dar
 import 'package:book/Features/favourite/presentation/manager/favourite_states.dart';
 import 'package:book/Features/home/presentation/views_model/views/side_bar_view.dart';
 import 'package:book/Features/home/presentation/views_model/views/widgets/custom_app_bar.dart';
-import 'package:book/core/utils/widgets/snack_bar.dart';
+import 'package:book/core/widgets/snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -26,6 +26,7 @@ class CustomCategoriesList extends StatelessWidget {
                   homeCubit.setCategoryType(categories[index]);
                   homeCubit.fetchRecommendedBooks();
                   homeCubit.fetchNewestBooks();
+                  homeCubit.fetchNewBooks();
 
                 },
                 child: CustomCategoryItem(category: categories[index]),),

@@ -1,7 +1,12 @@
 import 'package:book/Features/favourite/presentation/manager/favourite_cubit.dart';
+import 'package:book/Features/home/data/repo/home_repo.dart';
+import 'package:book/Features/home/data/repo/home_repo_imple.dart';
 import 'package:book/Features/home/presentation/manager/homeCubit/home_cubit.dart';
+import 'package:book/core/utils/api_request.dart';
 import 'package:book/core/utils/api_service.dart';
 import 'package:book/core/utils/cach_helper.dart';
+import 'package:book/core/utils/service_locator.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +16,7 @@ import 'core/utils/my_routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  setupServiceLocator();
   ApiService.init();
   await CacheHelper.init();
   Bloc.observer = MyBlocObserver();
@@ -26,7 +32,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => HomeCubit()
+          create: (context) => HomeCubit(getIt.get<HomeRepoImpl>())
+            ..fetchNewBooks()
             ..fetchNewestBooks()
             ..fetchRecommendedBooks(),
         ),

@@ -12,18 +12,16 @@ class SearchCubit extends Cubit<SearchStates> {
     emit(SearchLoadingState());
     ApiService.getData(
       endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest &q=$value',
-    )
-        .then(
-          (value) {
-            searchedBooks.add(value.data['items'][0]);
-            emit(SearchSuccessState());
-          },
-        )
-        .catchError(
-          (errMessage) {
-            print(errMessage.toString());
-            emit(SearchFailureState(errMessage.toString()));
-          },
-        );
+    ).then(
+      (value) {
+        searchedBooks.add(value.data['items'][0]);
+        emit(SearchSuccessState());
+      },
+    ).catchError(
+      (errMessage) {
+        print(errMessage.toString());
+        emit(SearchFailureState(errMessage.toString()));
+      },
+    );
   }
 }

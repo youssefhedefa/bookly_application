@@ -1,4 +1,4 @@
-import 'package:book/core/utils/widgets/cached_image.dart';
+import 'package:book/core/widgets/cached_image.dart';
 import 'package:flutter/material.dart';
 
 

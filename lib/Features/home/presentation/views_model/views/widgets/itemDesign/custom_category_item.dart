@@ -3,8 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../core/utils/constance.dart';
 
 class CustomCategoryItem extends StatelessWidget {
-  const CustomCategoryItem({Key? key, required this.category}) : super(key: key);
+  const CustomCategoryItem({Key? key, required this.category})
+      : super(key: key);
+
   final String category;
+
   @override
   Widget build(BuildContext context) {
     return Container(

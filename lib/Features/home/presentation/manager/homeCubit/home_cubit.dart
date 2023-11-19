@@ -1,18 +1,33 @@
 import 'package:bloc/bloc.dart';
+import 'package:book/Features/home/data/repo/home_repo.dart';
 import 'package:book/core/utils/api_service.dart';
 import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeStates> {
+  HomeCubit(this.homeRepo) : super(HomeInitialState());
 
-  HomeCubit() : super(HomeInitialState());
+  final HomeRepo homeRepo;
+
+  Future<void> fetchNewBooks() async {
+    emit(HomeLoadingState());
+    var result = await homeRepo.fetchNewBooks();
+
+    result.fold(
+      (failure) {
+        emit(HomeFailureState(failure.toString()));
+      },
+      (books) {
+        emit(HomeGetNewBooksSuccessState(books));
+      },
+    );
+  }
 
   List<dynamic> newestBooks = [];
   List<dynamic> recommendedBooks = [];
 
   String categoryType = 'Sport';
 
-  void setCategoryType(String type)
-  {
+  void setCategoryType(String type) {
     categoryType = type;
   }
 

@@ -13,34 +13,44 @@ class CustomRecommendedList extends StatelessWidget {
     return BlocBuilder<HomeCubit,HomeStates>(
       builder: (BuildContext context, state) {
         var homeCubit = BlocProvider.of<HomeCubit>(context);
-        return ListView.builder(
-          reverse: true,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          padding: EdgeInsetsDirectional.zero,
-          itemBuilder: (context, index) => GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, MyRoutes.kBookDetails);
-            },
-            child: GestureDetector(
-              onTap: (){
-                Navigator.pushNamed(
-                  context,
-                  MyRoutes.kBookDetails,
-                  arguments: homeCubit.newestBooks[index],
-                );
+
+        if(state is HomeGetNewBooksSuccessState)
+        {
+          return ListView.builder(
+            reverse: true,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: EdgeInsetsDirectional.zero,
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.kBookDetails);
               },
-              child: CustomRecommendedItem(
-                authorName: homeCubit.recommendedBooks[index]['volumeInfo']['authors']?[0] ?? '',
-                bookName: homeCubit.recommendedBooks[index]['volumeInfo']['title'],
-                description: homeCubit.recommendedBooks[index]['volumeInfo']['description'] ?? homeCubit.recommendedBooks[index]['volumeInfo']['infoLink'],
-                bookImage: homeCubit.recommendedBooks[index]['volumeInfo']['imageLinks']?['smallThumbnail'] ?? '',
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(
+                    context,
+                    MyRoutes.kBookDetails,
+                    arguments: homeCubit.newestBooks[index],
+                  );
+                },
+                child: CustomRecommendedItem(
+                  authorName: homeCubit.recommendedBooks[index]['volumeInfo']['authors']?[0] ?? '',
+                  bookName: homeCubit.recommendedBooks[index]['volumeInfo']['title'],
+                  description: homeCubit.recommendedBooks[index]['volumeInfo']['description'] ?? homeCubit.recommendedBooks[index]['volumeInfo']['infoLink'],
+                  bookImage: homeCubit.recommendedBooks[index]['volumeInfo']['imageLinks']?['smallThumbnail'] ?? '',
+                ),
               ),
             ),
-          ),
-          itemCount: homeCubit.recommendedBooks.length,
-          scrollDirection: Axis.vertical,
-        );
+            itemCount: state.books.length,
+            scrollDirection: Axis.vertical,
+          );
+        }
+        else
+        {
+          return Container();
+        }
+
+
       },
     );
   }
