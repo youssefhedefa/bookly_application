@@ -24,9 +24,8 @@ Book Application is an application for display and download free books
 <div>
   <img src="https://github.com/youssefhedefa/bookly_application/assets/78417605/5de80487-acae-4b5a-99be-c7acb2ee55d2" width = 410 heght = 867 >
 </div>
-</div>
   &nbsp;&nbsp;&nbsp;&nbsp; 
-<div>
+
 ## Dependencies:
     flutter_screenutil: ^5.8.4
     google_fonts: ^5.1.0
