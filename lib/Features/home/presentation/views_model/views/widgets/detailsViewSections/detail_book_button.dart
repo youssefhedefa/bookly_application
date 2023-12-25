@@ -15,41 +15,44 @@ class CustomDetailBookButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FavouriteCubit,FavouritesStates>(
-      builder: (context, state) {
-        var fCubit = BlocProvider.of<FavouriteCubit>(context);
-        return Padding(
-          padding: EdgeInsetsDirectional.only(
-            top: 12.h,
-            start: 22.0.w,
-            end: 22.0.w,
-          ),
-          child: Row(
-            children: [
-              CustomCategoryItem(category: category),
-              const Spacer(),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.download_outlined,
-                  size: 36.sp,
+    return BlocProvider(
+      create: (context) => FavouriteCubit(),
+      child: BlocBuilder<FavouriteCubit,FavouritesStates>(
+        builder: (context, state) {
+          var fCubit = BlocProvider.of<FavouriteCubit>(context);
+          return Padding(
+            padding: EdgeInsetsDirectional.only(
+              top: 12.h,
+              start: 22.0.w,
+              end: 22.0.w,
+            ),
+            child: Row(
+              children: [
+                CustomCategoryItem(category: category),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.download_outlined,
+                    size: 36.sp,
+                  ),
                 ),
-              ),
-              IconButton(
-                onPressed: () {
-                  fCubit.addToFavourites(id);
-                  CacheHelper.setFavourites(fCubit.getFavourites(),);
-                  print(fCubit.getFavourites());
-                },
-                icon: Icon(
-                  CupertinoIcons.heart,
-                  size: 36.sp,
+                IconButton(
+                  onPressed: () {
+                    fCubit.addToFavourites(id);
+                    CacheHelper.setFavourites(fCubit.getFavourites(),);
+                    print(fCubit.getFavourites());
+                  },
+                  icon: Icon(
+                    CupertinoIcons.heart,
+                    size: 36.sp,
+                  ),
                 ),
-              ),
-            ],
-          ),
-        );
-      },
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
