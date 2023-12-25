@@ -27,6 +27,7 @@ Book Application is an application for display and download free books
   &nbsp;&nbsp;&nbsp;&nbsp; 
 
 ## Dependencies:
+    cupertino_icons: ^1.0.2
     flutter_screenutil: ^5.8.4
     google_fonts: ^5.1.0
     dio: ^5.3.0
@@ -34,6 +35,8 @@ Book Application is an application for display and download free books
     flutter_bloc: ^8.1.3
     cached_network_image: ^3.2.3
     shared_preferences: ^2.2.0
+    get_it:
+    dartz: ^0.10.1
 
   
 
